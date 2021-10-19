@@ -47,6 +47,7 @@ void print_ZigZag(Node* root) {
     }
     cout<<endl;
 }
+// Prints All the paths to nodes in a BT
 void pathsRecursive(Node *root, int path[], int size, int *total) {
     if(root==NULL) return;
     path[size++] = root->data;
@@ -61,11 +62,17 @@ void pathsRecursive(Node *root, int path[], int size, int *total) {
         pathsRecursive(root->right, path, size, total);
     }
 }
+// Prints all the paths to leaf nodes in a BT
 void print_paths(Node *root) {
     int *path = new int;
     int total = 0;
     pathsRecursive(root, path, 0, &total);
     cout<<total<<endl;
+}
+int getSum(Node *root) {
+    if(root==NULL) return 0;
+    if(root->left==NULL && root->right==NULL) return root->data;
+    return(root->data + getSum(root->left) + getSum(root->right));
 }
 int main() {
     Node *root = new Node(1);
@@ -76,9 +83,6 @@ int main() {
         //         1
         //     2       3
         //  4     5
-
-    print_ZigZag(root);
-
-    print_paths(root);
+    cout<<getSum(root)<<endl;
     return 0;
 }
