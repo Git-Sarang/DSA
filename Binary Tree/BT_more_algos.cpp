@@ -69,10 +69,21 @@ void print_paths(Node *root) {
     pathsRecursive(root, path, 0, &total);
     cout<<total<<endl;
 }
+// Gets Sum of all the nodes
 int getSum(Node *root) {
     if(root==NULL) return 0;
     if(root->left==NULL && root->right==NULL) return root->data;
     return(root->data + getSum(root->left) + getSum(root->right));
+}
+// Builds a Complete tree from an Array in Level order.
+Node* buildLevelOrder(int arr[], int size, Node* root, int i) {
+    if(i<size) {
+        Node *tmp = new Node(arr[i]);
+        root = tmp;
+        root->left = buildLevelOrder(arr, size, root->left, 2*i+1);
+        root->right = buildLevelOrder(arr, size, root->right, 2*i+2);
+    }
+    return root;
 }
 int main() {
     Node *root = new Node(1);
@@ -84,5 +95,6 @@ int main() {
         //     2       3
         //  4     5
     cout<<getSum(root)<<endl;
+    
     return 0;
 }
