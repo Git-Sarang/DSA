@@ -85,6 +85,29 @@ Node* buildLevelOrder(int arr[], int size, Node* root, int i) {
     }
     return root;
 }
+// Converts a BT to DLL(Using the same Tree Node)
+void tree_to_DLL(Node* root, Node* &head, Node* &prev) {
+    if(root==NULL) return;
+    tree_to_DLL(root->left, head, prev);
+    if(prev==NULL) {
+        head=root;
+        prev=root;
+    } else {
+        root->left = prev;
+        prev->right = root;
+        prev = root;
+    }
+    tree_to_DLL(root->right, head, prev);
+}
+// This is to print a DLL of type Node(Tree). Made to check 'tree_to_DLL()'.
+void printDLL(Node *head) {
+    Node* tmp = head;
+    while(tmp!=NULL) {
+        cout<<tmp->data<<" ";
+        tmp = tmp->right;
+    }
+    cout<<endl;
+}
 int main() {
     Node *root = new Node(1);
     root->left = new Node(2);
@@ -94,7 +117,14 @@ int main() {
         //         1
         //     2       3
         //  4     5
-    cout<<getSum(root)<<endl;
+
+    //Converting BT to DLL and storing it's head in DLLhead.
+    Node *DLLhead = NULL;
+    Node *DLLprev = NULL;
+    tree_to_DLL(root, DLLhead, DLLprev);
+    cout<<"This is a DLL-> ";
+    printDLL(DLLhead);
+
     
     return 0;
 }
