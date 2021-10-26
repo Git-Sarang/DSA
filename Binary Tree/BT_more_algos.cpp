@@ -75,6 +75,16 @@ int getSum(Node *root) {
     if(root->left==NULL && root->right==NULL) return root->data;
     return(root->data + getSum(root->left) + getSum(root->right));
 }
+
+Node* lca(Node *root, int a, int b) {
+    if(root==NULL) return NULL;
+    if(root->data==a || root->data==b) return root;
+    Node* l = lca(root->left, a, b);
+    Node* r = lca(root->right, a, b);
+    if(l==NULL) return r;
+    if(r==NULL) return l;
+    return root;
+}
 // Builds a Complete tree from an Array in Level order.
 Node* buildLevelOrder(int arr[], int size, Node* root, int i) {
     if(i<size) {
@@ -125,6 +135,7 @@ int main() {
     cout<<"This is a DLL-> ";
     printDLL(DLLhead);
 
+    
     
     return 0;
 }
