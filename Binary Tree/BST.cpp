@@ -39,7 +39,11 @@ void printInorder(Node* root) {
     cout<<root->data<<" ";
     printInorder(root->right);
 }
-
+Node* maxValNode(Node* root) {
+    Node* curr = root;
+    while(curr!=NULL && curr->right!=NULL) curr=curr->right;
+    return curr;
+}
 // Returns the node with the min Value in the BST.
 Node* minValNode(Node* root) {
     Node* curr = root;
@@ -91,5 +95,9 @@ int main() {
     
     deleteNode(myRoot, 1);
     printInorder(myRoot);
+    cout<<endl;
+
+    cout<<"Min value of BST: "<<minValNode(myRoot)->data <<endl;
+    cout<<"Max value of BST: "<<maxValNode(myRoot)->data <<endl;
     return 0;
 }
