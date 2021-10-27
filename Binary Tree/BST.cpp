@@ -39,12 +39,57 @@ void printInorder(Node* root) {
     cout<<root->data<<" ";
     printInorder(root->right);
 }
+
+// Returns the node with the min Value in the BST.
+Node* minValNode(Node* root) {
+    Node* curr = root;
+    while (curr!=NULL && curr->left!=NULL) {
+        curr = curr->left;
+    }
+    return curr;
+    
+}
+Node* deleteNode(Node* root, int key) {
+
+    if(root==NULL) return NULL;
+    // Finding key
+    else if(key > root->data) {
+        root->right = deleteNode(root->right, key);
+    }
+    // Finding Key
+    else if(key < root->data) {
+        root->left = deleteNode(root->left, key);
+    } else {
+        // case 1 and 2
+        if(root->left==NULL) {
+            Node* tmp = root->right;
+            delete root;
+            return tmp;
+        }
+        // case 1 and 2
+        else if(root->right==NULL) {
+            Node* tmp = root->left;
+            delete root;
+            return tmp;
+        }
+        // case 3
+        Node* tmp = minValNode(root->right);
+        root->data = tmp->data;
+        root->right = deleteNode(root->right, tmp->data);
+    }
+    return root;
+}
 int main() {
     Node* myRoot = new Node(5);
     insert(myRoot, 3);
     insert(myRoot, 7);
     insert(myRoot, 6);
+    insert(myRoot, 1);
 
+    printInorder(myRoot);
+    cout<<endl;
     
+    deleteNode(myRoot, 1);
+    printInorder(myRoot);
     return 0;
 }
