@@ -83,6 +83,18 @@ Node* deleteNode(Node* root, int key) {
     }
     return root;
 }
+Node* lca(Node* root, int n1, int n2) {
+    while(root!=NULL) {
+        if(root->data>n1 && root->data>n2) {
+            root = root->left;
+        } else if(root->data<n1 &&root->data<n2) {
+            root = root->right;
+        } else {
+            break;
+        }
+    }
+    return root;
+}
 int main() {
     Node* myRoot = new Node(5);
     insert(myRoot, 3);
@@ -99,5 +111,7 @@ int main() {
 
     cout<<"Min value of BST: "<<minValNode(myRoot)->data <<endl;
     cout<<"Max value of BST: "<<maxValNode(myRoot)->data <<endl;
+
+    cout<<"LCA of 3 & 7: "<<lca(myRoot, 3, 7)->data << endl;
     return 0;
 }
