@@ -96,12 +96,14 @@ Node* lca(Node* root, int n1, int n2) {
     }
     return root;
 }
+// Checks if the Tree is BST or not
 bool isBST(Node* root, int min, int max) {
     if(root==NULL) return true;
     if(root->data > max || root->data < min) return false;
 
     return (isBST(root->left, min, root->data) && isBST(root->right, root->data, max));
 }
+
 int main() {
     Node* myRoot = new Node(5);
     insert(myRoot, 3);
