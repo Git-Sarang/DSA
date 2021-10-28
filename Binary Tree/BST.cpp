@@ -83,6 +83,7 @@ Node* deleteNode(Node* root, int key) {
     }
     return root;
 }
+// Finds the lca of a BST provided value of 2 nodes. O(h) time complex.
 Node* lca(Node* root, int n1, int n2) {
     while(root!=NULL) {
         if(root->data>n1 && root->data>n2) {
@@ -94,6 +95,12 @@ Node* lca(Node* root, int n1, int n2) {
         }
     }
     return root;
+}
+bool isBST(Node* root, int min, int max) {
+    if(root==NULL) return true;
+    if(root->data > max || root->data < min) return false;
+
+    return (isBST(root->left, min, root->data) && isBST(root->right, root->data, max));
 }
 int main() {
     Node* myRoot = new Node(5);
@@ -108,6 +115,8 @@ int main() {
     deleteNode(myRoot, 1);
     printInorder(myRoot);
     cout<<endl;
+
+    cout<<"Is this a BST? "<< isBST(myRoot, INT_MIN, INT_MAX)<<endl;
 
     cout<<"Min value of BST: "<<minValNode(myRoot)->data <<endl;
     cout<<"Max value of BST: "<<maxValNode(myRoot)->data <<endl;
