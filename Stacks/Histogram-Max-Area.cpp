@@ -50,6 +50,7 @@ int largestRectangleArea(vector<int>& arr) {
 
 signed main() {
     vector<int> histograms = {6, 2, 5, 4, 5, 1, 6};
+    // Ans: 12
     cout<<largestRectangleArea(histograms)<<endl;
     return 0;
 }
