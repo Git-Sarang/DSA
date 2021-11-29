@@ -2,14 +2,13 @@
 #define ll long long
 using namespace std;
 // Set every element to zero
-// Iterate and add the current element to the next 2 elements each time.
+// Iterate and add the last 2 elements to the current one.
 ll fib(int n) {
     ll t[n+1];
     memset(t, 0, sizeof(t)); //sets all values of 't' to 0
     t[1] = 1;
-    for(int i=0; i<n; i++) {
-        t[i+1] += t[i];
-        t[i+2] += t[i];
+    for(int i=2; i<n+1; i++) {
+        t[i] = t[i-1] + t[i-2];
     }
     return t[n];
 }
