@@ -17,6 +17,10 @@ int longestIncreasingSum(vector<int> &arr) {
     for(int i=0; i<n; i++) ans = max(ans, t[i]);
     return ans;
 }
+/* 
+    the approach is same but we have an extra s[n] array to store the index of j
+    whenever we have to add t[i].
+*/
 void longestIncreasingSumSubsequence(vector<int> &arr) {
     int n = arr.size();
     int t[n];
