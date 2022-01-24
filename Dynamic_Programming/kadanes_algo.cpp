@@ -2,7 +2,7 @@
 #include <algorithm>
 using namespace std;
 // This gives the largest Sub-Array Sum     O(n)
-// T: O(n) S:O(n)
+// T:O(n) S:O(n)
 int kadane_max(int n, int *a) {
     int t[n+1];
     t[0] = 0;
@@ -13,7 +13,7 @@ int kadane_max(int n, int *a) {
     }
     return ans;
 }
-
+// T:O(n) S:O(1)
 int kadane_max_op(int n, int *a) {
     int tmp = 0, ans = a[0];
     for(int i=0; i<n; i++) {
