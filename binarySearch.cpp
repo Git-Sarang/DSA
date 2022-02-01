@@ -3,7 +3,7 @@ using namespace std;
 // Iterative
 void binSearch(int *arr, int l, int h, int x) {
     while(l<=h) {
-        int mid = (l+h)/2;
+        int mid = l+(h-l)/2;
         if(arr[mid] > x){
             h = mid-1;
         }else if(arr[mid] < x){
