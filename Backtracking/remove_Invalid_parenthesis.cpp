@@ -30,7 +30,8 @@ void solve(string s, int minInv) {
     // base case
     if(minInv<0) return;
 
-    // 
+    // If there is supposed to be a valid string, it checks if the string is valid.
+    // If it is, then it adds it to the res vector.
     if(minInv==0) {
         if(getMinInvalid(s)==0) {
             res.push_back(s);
@@ -38,9 +39,13 @@ void solve(string s, int minInv) {
         return;
     }
 
+    // Passes the string by removing the i'th char each time.
     for(int i=0; i<s.size(); i++) {
         string left = s.substr(0, i);
         string right = s.substr(i+1);
+        // the string passed is without he i'th char.
+        /* We do minInv-1 because we are removing one char from the string assuming it
+        to be wrong char in the string */
         solve(left+right, minInv-1);
     }
 
