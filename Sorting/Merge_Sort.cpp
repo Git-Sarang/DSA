@@ -3,7 +3,7 @@ using namespace std;
 void merge_arr(int arr[], int start, int mid, int end) {
     int n1 = mid-start+1;
     int n2 = end-mid;
-	int *a = new int[n1];
+	  int *a = new int[n1];
     int *b = new int[n2];
     for(int i=0; i<n1; i++) {
       a[i] = arr[start+i];
