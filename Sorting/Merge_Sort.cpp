@@ -22,7 +22,7 @@ void merge_arr(int arr[], int start, int mid, int end) {
                 arr[k] = b[j];
                 j++;
         }
-            k++;
+        k++;
     }
     while(i<n1)
       arr[k++] = a[i++];
