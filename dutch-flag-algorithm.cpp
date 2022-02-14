@@ -20,7 +20,6 @@ void dutchSort(vector<int> &v) {
             high--;
         }
     }
-
 }
 
 int main() {
