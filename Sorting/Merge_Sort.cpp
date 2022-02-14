@@ -18,7 +18,7 @@ void merge_arr(int arr[], int start, int mid, int end) {
         if (a[i] <= b[j]) {
                 arr[k] = a[i];
                 i++;
-        }else {
+        } else {
                 arr[k] = b[j];
                 j++;
         }

@@ -3,11 +3,6 @@
 
 using namespace std;
 
-void swap(int &a, int &b){
-    int tmp = a;
-    a = b;
-    b = tmp;
-}
 void dutchSort(vector<int> &v) {
     int low = 0, mid = 0, high = v.size()-1;
 
