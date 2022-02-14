@@ -12,10 +12,10 @@ void dutchSort(vector<int> &v) {
             low++;
             mid++;
         }
-        if(v[mid]==1) {
+        else if(v[mid]==1) {
             mid++;
         }
-        if(v[mid]==2) {
+        else if(v[mid]==2) {
             swap(v[mid], v[high]);
             high--;
         }
