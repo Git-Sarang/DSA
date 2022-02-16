@@ -14,6 +14,19 @@ class Graph{
     void addEdge(int vert, int weight, int point) {
         adj[vert].push_back({weight, point});
     }
+
+    int prims_MST(Graph g) {
+        vector<bool> visited(g.vertices, false);
+        visited[0] = true;
+        int curr_vert = 0;
+        multiset<pair<int, int>> q;
+        for(int i=0; i<vertices-1; i++) {
+            for(auto x: g.adj[curr_vert]) {
+                q.insert({x.first, x.second});
+            }
+            
+        }
+    }
 };
 
 int main() {
