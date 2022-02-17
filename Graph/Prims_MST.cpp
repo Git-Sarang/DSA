@@ -54,7 +54,7 @@ int main() {
     Graph g2(3);
     g2.addEdge(0, 5, 1);
     g2.addEdge(0, 1, 2);
-    g2.addEdge(1, 3, 2);
+    g2.addEdge(2, 3, 1);
     // MST: 4
     cout<<g2.prims_MST()<<endl;
     return 0;
