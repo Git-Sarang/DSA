@@ -22,6 +22,7 @@ vector<int> build_lps(string pat) {
     }
     return lps;
 }
+// O(n)
 int kmp(string s, string pat, vector<int> &lps) {
     // 'i' for s, 'j' for pat
     int i=0, j=0;
@@ -54,6 +55,6 @@ int main() {
     // ANS: 8
     
     cout<<kmp(s, pat, lps)<<endl;
-    
+
     return 0;
 }
