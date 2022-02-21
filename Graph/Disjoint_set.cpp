@@ -34,7 +34,7 @@ int main() {
     parent.clear();
     parent.resize(10, -1);
 
-    vector<pair<int, int>> test_edgeList2 = {{0,1}, {1,2}, {2,3}, {0,3}};  //Cyclic
+    vector<pair<int, int>> test_edgeList2 = {{0,1}, {1,2}, {2,3}, {0,0}};  //Cyclic
     cout<<hasCycle(test_edgeList2)<<endl;
     parent.clear();
     parent.resize(10, -1);
