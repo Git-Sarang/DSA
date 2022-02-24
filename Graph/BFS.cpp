@@ -12,7 +12,8 @@ class Graph{
     void addEdge(int v, int point) {
         vert[v].push_back(point);
     }
-
+    // Main function
+    
     void BFS(int v) {
         queue<int> q;
         q.push(v);
