@@ -55,6 +55,7 @@ class Graph{
 
 int main() {
     Graph g(5);  //TAKES NUMBER OF VERTICES
+    // {vert, point, weight}
     g.addEdge(0,1,4);
     g.addEdge(0,2,1);
     g.addEdge(2,1,2);
