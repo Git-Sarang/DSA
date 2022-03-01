@@ -28,6 +28,7 @@ class Graph{
     void dijstra(int src) {
         vector<int> dist(vertices, INT_MAX);
         vector<bool> visited(vertices, false);
+        // priority queue: {weight, vert}
         priority_queue<pair<int,int>> q;
         q.push({0, src});
         dist[src] = 0;
