@@ -15,7 +15,6 @@ void union_set(int fromPoint, int toPoint) {
     parent[fromPoint] = toPoint;
 }
 bool hasCycle(vector<pair<int, int>> &edgeList) {
-    ;
     for(auto edge: edgeList) {
         int fromPoint = find(edge.first);
         int toPoint = find(edge.second);
