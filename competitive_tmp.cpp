@@ -8,16 +8,10 @@
 using namespace std;
 
 signed main() {
-    fop(i, 8) cout<<i<<" ";
-    vvll mat(5, vll(5, 0));
+    int cases;
+    cin>>cases;
+    while(cases--) {
 
-    int r = mat.size();
-    int c = mat[0].size();
-    fop(i, r) {
-        fop(j, c) {
-            cout<<mat[i][j]<<" ";
-        }
-        cout<<endl;
     }
     return 0;
 }
