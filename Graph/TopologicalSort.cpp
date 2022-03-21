@@ -28,7 +28,7 @@ class Graph{
         }
     }
 
-    // THIS JUST A DFS ALGORITHM
+    // THIS JUST A DFS
     void topologicalSortUtil(int v, map<int, bool> &visited, stack<int> &st) {
         visited[v] = true;
 
