@@ -49,7 +49,6 @@ int main() {
     g.addEdge(3, 4);
     g.addEdge(4, 5);
     
- 
     cout << "Following is a Topological Sort of the given "
             "graph \n";
  
