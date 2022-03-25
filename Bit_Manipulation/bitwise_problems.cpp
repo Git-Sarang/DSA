@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 using namespace std;
+// Number of setbits
 int numberOfones(int n) {
     int ans = 0;
     while(n!=0) {
